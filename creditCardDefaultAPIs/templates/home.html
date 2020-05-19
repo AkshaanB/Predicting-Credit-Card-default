@@ -2,15 +2,56 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Predicting-Credit-Card-default</title>
+    <title> Predicting Credit Card default</title>
   </head>
-  <body>
+  <body style="background-color: gainsboro">
     <b><h1 style="text-align: center;"> Predicting Credit Card default </h1></b>
     <b><p style="text-align: center;">-- Predicting which priority clients have the highest risk of credit card default? --</p></b>
-    <br><br>
-    <form action="{{ url_for('predict') }}" method="post">
-      <input type="text" name="name">
-      <input type="submit">
-  </form>
+    <br><br><br><br>
+    <div style="text-align: center;border: 1px solid black; position: absolute; left:25%; right:25%;">
+      <br>
+      <form action="{{ url_for('home') }}" method="post">
+        <b>BALANCE:</b>
+        <input type="number" name="balance" placeholder="Balance" required><br><br>
+        <b>GENDER:</b>
+        <select name="gender">
+          <option>Male</option>
+          <option>Female</option>
+        </select><br><br>
+        <b>MARITAL STATUS:</b>
+        <select name="marital_status">
+          <option>Single</option>
+          <option>Other</option>
+        </select><br><br>
+        <b>AGE GROUP:</b>
+        <select name="age">
+          <option>Less than 30</option>
+          <option>31-45</option>
+          <option>46-65</option>
+          <option>More than 65</option>
+        </select><br><br>
+        <b>PAY:</b>
+        <input type="number" name="pay" min="-2" max="9" placeholder="Pay" required><br><br>
+        <b>DUE AMOUNT:</b>
+        <input type="number" name="due" placeholder="Due amount" required><br><br>
+        <b>PAID AMOUNT:</b>
+        <input type="number" name="paid" placeholder="Paid amount" required><br><br>
+        <b>EDUCATION STATUS:</b>
+        <select name="education_status">
+          <option>Graduate</option>
+          <option>High School</option>
+          <option>Other</option>
+        </select><br><br>
+        <input type="submit" style="background-color: yellowgreen; color: black; padding: 5px; border: 2px solid yellowgreen; cursor: pointer; font-weight: bold;">
+        <br><br>
+      </form>
+    </div>
+    <!-- <br><br><br><br><br><br><br><br><br><br><br><br><br><br> -->
+    <div style="text-align: center; position: absolute; top: 78%; left: 42%;">
+          <p style="font-size:25px">Predicted result: {{ result }}</p>
+    </div>
+    <footer style="position: absolute; top: 93%; left: 45%;">
+      <p style="color: black;">&copy; 2020/5/19 <a href="https://github.com/AkshaanB" target="_blank" style="color: black; text-decoration: none;"><b>Akshaan Bandara</b></a></p>
+    </footer>
   </body>
 </html>
